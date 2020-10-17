@@ -58,6 +58,8 @@ body{
     height: 7rem;
     background-color: #fff;
     border-bottom: $color-grey-light-2;
+    display: flex;
+    justify-content: space-between;
 }
 
 .content{
@@ -67,9 +69,177 @@ body{
 .sidebar{
     background-color: $color-grey-dark-1;
     flex: 0 0 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .description{
     background-color: #fff;
+    height: 80rem;
     flex: 1;
+}
+
+.logo{
+    height: 3.25rem;
+    margin-left: 2rem;
+    align-self: center;
+}
+
+.search{
+    flex: 0 0 40%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__input{
+        color: inherit;
+        background-color: $color-grey-light-2;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 90%;
+        transition: all .2s;
+        margin-right: -3.25rem;
+        border: none;
+
+        &:focus{
+            outline: none;
+            width: 100%;
+            background-color: $color-grey-light-3;
+        }
+    }
+
+    &__icon{
+        height: 2rem;
+        width: 2rem;
+        fill: $color-grey-dark-3;
+    }
+
+    &__button{
+        border: none;
+        background-color: $color-grey-light-2;
+
+        &:focus{
+            outline: none;
+        }
+
+        &:active{
+            transform: translateY(2px);
+        }
+    }
+}
+
+.user-nav{
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+
+    & > *{
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    & > *:hover{
+        background-color: $color-grey-light-2;
+    }
+
+    &__icon{
+        height: 2.25rem;
+        width: 2.25rem;
+        fill: $color-grey-dark-2;
+    }
+
+    &__icon-box{
+        position: relative;
+    }
+
+    &__notifications{
+        font-size: .8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        background-color: $color-primary;
+        color: #fff;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image{
+        height: 3.75rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+    &__username{
+        font-size: 1.4rem;
+    }
+}
+
+.side-nav{
+    list-style: none;
+    margin-top: 3.5rem;
+
+    &__items{
+        position: relative;
+
+        &:not(:last-child){
+            margin-bottom: .5rem;
+        }
+    }
+
+    &__items::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: $color-primary;
+        transform: scaleY(0);
+        transition: transfrom .2s, width .4s cubic-bezier(1,0,0,1) .2s, background-color .1s;
+    }
+
+    &__items:hover::before,
+    &__items-active::before{
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &__items:active::before{
+        background-color: $color-primary-light;
+    }
+
+    &__link:link, &__link:visited{
+        color: $color-grey-light-1;
+        display: block;
+        padding:1.5rem 3rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 2.4rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__icon{
+        height: 1.75rem;
+        width: 1.75rem;
+        margin-right: 2rem;
+        fill: currentColor;
+    }
+}
+
+.legal{
+    font-size: 1.2rem;
+    padding: 2.5rem;
+    color: $color-grey-light-4;
+    text-align: center;
 }
