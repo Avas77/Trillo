@@ -10,6 +10,8 @@ import user1 from './assets/user-3.jpg';
 import user2 from './assets/user-4.jpg';
 import user3 from './assets/user-5.jpg';
 import user4 from './assets/user-6.jpg';
+import user5 from './assets/user-1.jpg';
+import user6 from './assets/user-2.jpg';
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
       <header className="header">
         <img src={logo} alt="" className="logo"/>
         <form action="#" className="search">
-          <input type="text" className="search__input" placeholder = "Search Hotels...."/>
+          <input type="text" className="search__input" placeholder = "Search Hotels..."/>
           <button className="search__button">
             <svg className="search__icon">
               <use xlinkHref = {sprite + "#icon-magnifying-glass"}></use>
@@ -156,8 +158,41 @@ function App() {
               </div>
             </div>
             <div className="user-reviews">
-              User Review part
+              <figure className="review">
+                <blockquote className="review__text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex.
+                </blockquote>
+                <figcaption className="review__user">
+                  <img src={user5} alt="" className="review__photo"/>
+                  <div className="review__user-box">
+                    <p className="review__user-name">Raju Lama</p>
+                    <p className="review__user-date">Feb 6, 2020</p>
+                  </div>
+                  <div className="review__rating">7.8</div>
+                </figcaption>
+              </figure>
+              <figure className="review">
+                <blockquote className="review__text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex.
+                </blockquote>
+                <figcaption className="review__user">
+                  <img src={user6} alt="" className="review__photo"/>
+                  <div className="review__user-box">
+                    <p className="review__user-name">Kabita Lamichhane</p>
+                    <p className="review__user-date">May 11, 2018</p>
+                  </div>
+                  <div className="review__rating">9.3</div>
+                </figcaption>
+              </figure>
+              <button className="btn-inline">Show all <span>&#8594;</span></button>
             </div>
+          </div>
+          <div className="action">
+            <h1 className="action__book-now">Good News! We have 4 rooms availabe for your selected dates!</h1>
+            <button className="btn">
+              <span className="btn__visible">Book now</span>
+              <span className="btn__invisible"> Only 4 rooms left</span>
+            </button>
           </div>
         </main>
       </div>
